@@ -53,6 +53,7 @@
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
 				<version>1.3.7</version>
+				<!-- 覆盖之前生成的文件 -->
 				<configuration>
 					<overwrite>true</overwrite>
 				</configuration>
