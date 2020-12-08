@@ -8,6 +8,65 @@
 #### 运行jar包
 - java -jar mall-0.0.1-SNAPSHOT.jar 命令运行主程序
 
+#### 使用社区版IDEA创建SpringBoot项目
+- 继承springBoot项目版本自己确定
+```
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.7.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+</parent>
+```
+- 基本的依赖和插件
+```
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>2.1.0</version>
+    </dependency>
+</dependencies>
+    
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-maven-plugin</artifactId>
+            <version>1.3.7</version>
+            <!-- 不重复生成java代码会覆盖之前生成的文件 -->
+            <configuration>
+                <overwrite>true</overwrite>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+- 创建.gitignore文件忽略有些文件提交
+- 配置文件resources/application.yml文件数据库
+- 创建xxxApplication.java并编写程序main函数
+
 #### java对象
 - po: persistent object 持久层对象
 - pojo: plain ordinary java object 普通java对象只有属性+get/set方法
