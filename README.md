@@ -64,7 +64,7 @@
 </build>
 ```
 - 创建.gitignore文件忽略有些文件提交
-- 配置文件resources/application.yml文件数据库
+- 配置文件resources/application.yml文件, 主要是数据库信息
 - 在resources文件加下创建templates和static包
 - 创建xxxApplication.java并编写程序main函数
 - 创建xxxApplicationTest.java并作为单元测试的主类
