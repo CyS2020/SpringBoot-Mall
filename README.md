@@ -65,8 +65,10 @@
 ```
 - 创建.gitignore文件忽略有些文件提交
 - 配置文件resources/application.yml文件数据库
+- 在resources文件加下创建templates和static包
 - 创建xxxApplication.java并编写程序main函数
 - 创建xxxApplicationTest.java并作为单元测试的主类
+
 
 #### java对象
 - po: persistent object 持久层对象
