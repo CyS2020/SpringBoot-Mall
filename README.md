@@ -94,4 +94,9 @@
 
 #### BigDecimal类
 - 使用BigDecimal.valueOf(0.01), 不要使用new BigDecimal(0.01)将来精度会出问题
-- 上述与new BigDecimal("0.01")等价, 注意查看源码实现
+- 上述与new BigDecimal("0.01")等价, 注意查看源码实现\
+
+### notify_url
+- 微信支付中模式二不需要在微信支付后台开发配置中设置扫码回调链接
+- notify_url不一定必须用域名, 也可以使用ip地址
+- 云服务器的公网ip可以直接访问系统, 家庭宽带公网ip不行
