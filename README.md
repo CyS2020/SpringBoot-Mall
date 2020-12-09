@@ -66,6 +66,7 @@
 - 创建.gitignore文件忽略有些文件提交
 - 配置文件resources/application.yml文件数据库
 - 创建xxxApplication.java并编写程序main函数
+- 创建xxxApplicationTest.java并作为单元测试的主类
 
 #### java对象
 - po: persistent object 持久层对象
@@ -88,3 +89,7 @@
 - IOC 控制反转, DI依赖注入从不同角度描述同一件事情; 原来代码直接new实现类写死代码, 现在通过创建合适的实现类注入到服务中, 可以注入不同的实现类只要实现接口即可, 即我给你配置了什么类你就用什么类就行 了, 代码的控制权发生了变化, 以前是你决定用什么; 例如伐木工人砍树需要创建(new)一把斧子然后执行砍树操作, 现在给伐木工人一把斧子然后执行砍树操作, 至于是什么类型的斧子并不重要(只要实现了砍树功能接口)
 - AOP面向切片编程, 横向抽取机制, 例如给类添加性能检测, 事务控制, 日志打印等无法, 并不能使用纵向继承这些功能. spring aop就是将切面所定义的横向逻辑织入到切面所制定的连接点中; spring aop使用包括: 目标类、注解(非必须项)、切面类(定义切点和通知)
 - MVC: Model(模型)、View(视图)、Controller(控制器);主要包含四个接口: DispatcherServlet(整个Web应用的控制器)、HandlerMapping、Controller(单个Http请求处理过程中的控制器)和ViewResolver
+
+#### BigDecimal类
+- 使用BigDecimal.valueOf(0.01), 不要使用new BigDecimal(0.01)将来精度会出问题
+- 上述与new BigDecimal("0.01")等价, 注意查看源码实现
