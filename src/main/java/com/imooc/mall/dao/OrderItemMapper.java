@@ -3,6 +3,7 @@ package com.imooc.mall.dao;
 import com.imooc.mall.pojo.OrderItem;
 
 public interface OrderItemMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(OrderItem record);
