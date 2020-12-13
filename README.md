@@ -140,5 +140,13 @@
 - 使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
 - 使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody)
 
-#### cookie 跨域
+#### cookie session 跨域
 - 域名与域名不一样、IP与IP地址不一样、域名与IP(localhost与127.0.0.1)比较都算跨越
+- cookie不安全session安全, 后端开发只操作session, session与cookie不分家, session就是用到了cookie来实现的, cookie是实现Session的一种方式
+- 服务端需要通过session来识别具体的用户, 服务端要为特定用户创建特定的session, 用于标识这个用户并且跟踪
+- 那么问题来了session如何来识别具体的用户呢？客户端会将cookie信息发送到服务端, cookie里面记录一个Session ID
+- session是抽象的概念, cookie是具体的概念, cookie是session一种具体的实现方式
+```
+       前端        ->           后端
+cookie(sessionId)  ->   session(HttpSession)
+```
