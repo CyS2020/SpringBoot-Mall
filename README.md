@@ -139,3 +139,6 @@
 #### 前端请求方式
 - 使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
 - 使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody)
+
+#### cookie 跨域
+- 域名与域名不一样、IP与IP地址不一样、域名与IP(localhost与127.0.0.1)比较都算跨越
