@@ -51,11 +51,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
         </plugin>
+        <!-- 用于生成dao和pojo的插件, 非必选项 -->
         <plugin>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-maven-plugin</artifactId>
             <version>1.3.7</version>
-            <!-- 不重复生成java代码会覆盖之前生成的文件 -->
             <configuration>
                 <overwrite>true</overwrite>
             </configuration>
@@ -129,3 +129,13 @@
 #### 模块的分割
 - 一般来说商城系统, 支付系统, 包括用于生产dao层和pojo的mybatis系统都是各自独立的
 - 此项目中为了(比较小)就没有将用mybatis生成dao层和pojo的系统独立出来
+
+#### 用户模块开发
+- Content-Type:application/json 这是调用API的请求头
+- 开发顺序: Dao -> Service -> Controller
+- 单元测试: Service层(主要的业务逻辑)
+- Mybatis打印SQL语句
+
+#### 前端请求方式
+- 使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
+- 使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody)
