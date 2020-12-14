@@ -4,10 +4,6 @@ import lombok.Data;
 
 import java.util.Date;
 
-/**
- * @author: CyS2020
- * @date: 2020/12/6
- */
 @Data
 public class Category {
 
@@ -17,7 +13,7 @@ public class Category {
 
     private String name;
 
-    private Integer status;
+    private Boolean status;
 
     private Integer sortOrder;
 
