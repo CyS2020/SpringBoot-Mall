@@ -137,10 +137,9 @@
 - Mybatis打印SQL语句
 
 #### 前端请求方式
-- 使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
-- 使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody)
-- 如果是url带参数则需要使用第一中来解析请求参数, 使用json解析不到
-
+- body使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
+- body使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody), 使用@Valid验证对象中字段是否符合要求, @NotBlank/@NotNull/@NotEmpty
+- url中使用注解@PathVariable来绑定传入的参数
 #### cookie session 跨域
 - 域名与域名不一样、IP与IP地址不一样、域名与IP(localhost与127.0.0.1)比较都算跨越
 - cookie不安全session安全, 后端开发只操作session, session与cookie不分家, session就是用到了cookie来实现的, cookie是实现Session的一种方式
