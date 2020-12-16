@@ -150,3 +150,6 @@
        前端        ->           后端
 cookie(sessionId)  ->   session(HttpSession)
 ```
+#### 耗时
+- http(请求微信api) > 内网 + 磁盘(mysql) > 内存
+- 代码中最忌讳的就是在for循环中做http、sql
