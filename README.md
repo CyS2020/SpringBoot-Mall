@@ -139,6 +139,7 @@
 #### 前端请求方式
 - 使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
 - 使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody)
+- 如果是url带参数则需要使用第一中来解析请求参数, 使用json解析不到
 
 #### cookie session 跨域
 - 域名与域名不一样、IP与IP地址不一样、域名与IP(localhost与127.0.0.1)比较都算跨越
@@ -153,3 +154,7 @@ cookie(sessionId)  ->   session(HttpSession)
 #### 耗时
 - http(请求微信api) > 内网 + 磁盘(mysql) > 内存
 - 代码中最忌讳的就是在for循环中做http、sql
+
+#### pageSize与pageNum
+- pageSize表示一页显示几条数据, 根据这个来将数据分成pageSize分页
+- pageNum表示显示第几页, 根据刚才划分的页, 指定显示哪一页
