@@ -156,5 +156,5 @@ cookie(sessionId)  ->   session(HttpSession)
 - 代码中最忌讳的就是在for循环中做http、sql
 
 #### pageSize与pageNum
-- pageSize表示一页显示几条数据, 根据这个来将数据分成pageSize分页
-- pageNum表示显示第几页, 根据刚才划分的页, 指定显示哪一页
+- pageSize表示一页显示几条数据, 根据这个数据来分页, 一页显示pageSize条数据, 一共total/pageSize页
+- pageNum表示显示第几页, 根据刚才划分的页total/pageSize页, 指定显示哪一页
