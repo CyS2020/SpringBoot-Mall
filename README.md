@@ -157,3 +157,6 @@ cookie(sessionId)  ->   session(HttpSession)
 #### pageSize与pageNum
 - pageSize表示一页显示几条数据, 根据这个数据来分页, 一页显示pageSize条数据, 一共total/pageSize页
 - pageNum表示显示第几页, 根据刚才划分的页total/pageSize页, 指定显示哪一页
+
+#### NoSQL数据库
+- Redis(高性能), MongoDB(海量数据), Elasticsearch/HBase(大数据)
