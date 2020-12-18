@@ -31,7 +31,10 @@ public enum ResponseEnum {
     NEED_LOGIN(10, "用户未登陆, 请先登陆"),
 
     // 11-用户名或密码错误
-    USERNAME_OR_PASSWORD_ERROR(11, "用户名或密码错误");
+    USERNAME_OR_PASSWORD_ERROR(11, "用户名或密码错误"),
+
+    // 12-商品下架或者删除
+    PRODUCT_OFF_SALE_OR_DELETE(12, "商品下架或删除");
 
     Integer code;
 

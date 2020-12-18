@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -64,11 +66,27 @@ public class CategoryServiceImpl implements ICategoryService {
         List<CategoryVo> categoryVoList = categories.stream()
                 .filter(category -> category.getParentId().equals(MallConst.ROOT_PARENT_ID))
                 .map(this::category2CategoryVo)
+                .sorted(Comparator.comparing(CategoryVo::getSortOrder).reversed())
                 .collect(Collectors.toList());
 
         // 查询子目录
         findSubCategory(categoryVoList, categories);
         return ResponseVo.success(categoryVoList);
+    }
+
+    @Override
+    public void findSubCategoryId(Integer id, Set<Integer> resultSet) {
+        List<Category> categories = categoryMapper.selectAll();
+        findSubCategoryId(id, resultSet, categories);
+    }
+
+    private void findSubCategoryId(Integer id, Set<Integer> resultSet, List<Category> categories) {
+        for (Category category : categories) {
+            if (category.getParentId().equals(id)) {
+                resultSet.add(category.getId());
+                findSubCategoryId(category.getId(), resultSet, categories);
+            }
+        }
     }
 
     private void findSubCategory(List<CategoryVo> categoryVoList, List<Category> categories) {
@@ -80,6 +98,7 @@ public class CategoryServiceImpl implements ICategoryService {
                     subCategoryVoList.add(category2CategoryVo(category));
                 }
             }
+            subCategoryVoList.sort(Comparator.comparing(CategoryVo::getSortOrder).reversed());
             categoryVo.setSubCategories(subCategoryVoList);
             findSubCategory(subCategoryVoList, categories);
         }

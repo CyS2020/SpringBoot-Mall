@@ -1,10 +1,9 @@
-package com.imooc.mall.service.impl;
+package com.imooc.mall.service;
 
 import com.imooc.mall.MallApplicationTests;
 import com.imooc.mall.enums.ResponseEnum;
 import com.imooc.mall.enums.RoleEnum;
 import com.imooc.mall.pojo.User;
-import com.imooc.mall.service.IUserService;
 import com.imooc.mall.vo.ResponseVo;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date: 2020/12/12
  */
 @Transactional
-public class UserServiceImplTest extends MallApplicationTests {
+public class IUserServiceTest extends MallApplicationTests {
 
     public static final String USERNAME = "jack";
 

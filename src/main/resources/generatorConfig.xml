@@ -51,8 +51,13 @@
         <!--               enableSelectByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"/>-->
         <!--        <table tableName="mall_user" domainObjectName="User" enableCountByExample="false"-->
         <!--               enableSelectByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"/>-->
-        <table tableName="mall_category" domainObjectName="Category" enableCountByExample="false"
-               enableSelectByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"/>
+        <!--        <table tableName="mall_category" domainObjectName="Category" enableCountByExample="false"-->
+        <!--               enableSelectByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="mall_product" domainObjectName="Product" enableCountByExample="false"
+               enableSelectByExample="false" enableDeleteByExample="false" enableUpdateByExample="false">
+            <columnOverride column="detail" jdbcType="VARCHAR"/>
+            <columnOverride column="sub_images" jdbcType="VARCHAR"/>
+        </table>
 
     </context>
 </generatorConfiguration>
