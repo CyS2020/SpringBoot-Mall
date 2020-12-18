@@ -1,0 +1,23 @@
+package com.imooc.mall.controller;
+
+import com.imooc.mall.form.CartAddForm;
+import com.imooc.mall.vo.CartVo;
+import com.imooc.mall.vo.ResponseVo;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+
+/**
+ * @author: CyS2020
+ * @date: 2020/12/18
+ */
+@RestController
+public class CartController {
+
+    @PostMapping("/carts")
+    public ResponseVo<CartVo> add(@Valid @RequestBody CartAddForm cartAddForm) {
+        return null;
+    }
+}
