@@ -40,7 +40,10 @@ public enum ResponseEnum {
     PRODUCT_NOT_EXIST(13, "商品不存在"),
 
     // 14-库存有误
-    PRODUCT_STOCK_ERROR(14, "库存不正确");
+    PRODUCT_STOCK_ERROR(14, "库存不正确"),
+
+    // 15-购物车里商品不存在
+    CART_PRODUCT_NOT_EXIST(15, "购物车里无此商品");
 
     Integer code;
 
