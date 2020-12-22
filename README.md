@@ -160,3 +160,6 @@ cookie(sessionId)  ->   session(HttpSession)
 
 #### NoSQL数据库
 - Redis(高性能), MongoDB(海量数据), Elasticsearch/HBase(大数据)
+
+#### 订单
+- 不可变：商品图片、收货地址; 可变：状态
