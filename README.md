@@ -168,4 +168,5 @@ cookie(sessionId)  ->   session(HttpSession)
 - Redis(高性能), MongoDB(海量数据), Elasticsearch/HBase(大数据)
 
 #### 订单
-- 不可变：商品图片、收货地址; 可变：状态
+- 不可变：商品图片、收货地址; 可变：状态、价格(波动)
+- 订单中需要将一些会变化的数据存贮起来, 不能用到的时候去数据库里查询不能代表下单时的数据了
