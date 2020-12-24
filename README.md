@@ -1,4 +1,9 @@
 ### 知识点
+#### 事务
+- @Transactional 注解底层是由数据库来决定的, 常用的引擎有InnoDB和MyISAM(不支持事务)
+- 事务一定是数据库的事务, 而不是java代码的事务, 出现RuntimeException的时候回滚
+- Redis所有单个命令的执行都是原子性的, redis不支持回滚操作
+
 #### 主键与索引
 - 表关系、表结构、唯一索引、单索引及组合索引、时间戳
 - 主键一定是唯一性索引，唯一性索引并不一定就是主键。
@@ -139,7 +144,8 @@
 #### 前端请求方式
 - body使用x-www-form-urlencoded来请求: 后端可以使用对象中的域来接收(配合@RequestParam), 或者使用对象来接收(无需注解)
 - body使用raw + json格式来请求: 后端使用对象来接收(配合@RequestBody), 使用@Valid验证对象中字段是否符合要求, @NotBlank/@NotNull/@NotEmpty
-- url中使用注解@PathVariable来绑定传入的参数
+- url中使用的入参注解@PathVariable来绑定传入的参数, 不是url中带的则需要使用上面方式定义form对象来接收
+
 #### cookie session 跨域
 - 域名与域名不一样、IP与IP地址不一样、域名与IP(localhost与127.0.0.1)比较都算跨越
 - cookie不安全session安全, 后端开发只操作session, session与cookie不分家, session就是用到了cookie来实现的, cookie是实现Session的一种方式
@@ -162,4 +168,5 @@ cookie(sessionId)  ->   session(HttpSession)
 - Redis(高性能), MongoDB(海量数据), Elasticsearch/HBase(大数据)
 
 #### 订单
-- 不可变：商品图片、收货地址; 可变：状态
+- 不可变：商品图片、收货地址; 可变：状态、价格(波动)
+- 订单中需要将一些会变化的数据存贮起来, 不能用到的时候去数据库里查询不能代表下单时的数据了
