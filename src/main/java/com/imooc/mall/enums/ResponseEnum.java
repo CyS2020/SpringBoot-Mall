@@ -46,7 +46,19 @@ public enum ResponseEnum {
     CART_PRODUCT_NOT_EXIST(15, "购物车里无此商品"),
 
     // 16-删除收货地址失败
-    DELETE_SHIPPING_FAIL(16, "删除收货地址失败");
+    DELETE_SHIPPING_FAIL(16, "删除收货地址失败"),
+
+    // 17-地址不存在
+    SHIPPING_NOT_EXIST(17, "收货地址不存在"),
+
+    // 18-购物车里没有选中的商品
+    CART_SELECTED_IS_EMPTY(18, "请选择商品后下单"),
+
+    // 19-订单不存在
+    ORDER_NOT_EXIST(19, "订单不存在"),
+
+    // 20-订单状态不正确
+    ORDER_STATUS_ERROR(20, "订单状态有误");
 
     Integer code;
 

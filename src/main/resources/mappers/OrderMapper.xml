@@ -184,16 +184,28 @@
     set order_no = #{orderNo,jdbcType=BIGINT},
       user_id = #{userId,jdbcType=INTEGER},
       shipping_id = #{shippingId,jdbcType=INTEGER},
-      payment = #{payment,jdbcType=DECIMAL},
-      payment_type = #{paymentType,jdbcType=INTEGER},
-      postage = #{postage,jdbcType=INTEGER},
-      status = #{status,jdbcType=INTEGER},
-      payment_time = #{paymentTime,jdbcType=TIMESTAMP},
-      send_time = #{sendTime,jdbcType=TIMESTAMP},
-      end_time = #{endTime,jdbcType=TIMESTAMP},
-      close_time = #{closeTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    payment = #{payment,jdbcType=DECIMAL},
+    payment_type = #{paymentType,jdbcType=INTEGER},
+    postage = #{postage,jdbcType=INTEGER},
+    status = #{status,jdbcType=INTEGER},
+    payment_time = #{paymentTime,jdbcType=TIMESTAMP},
+    send_time = #{sendTime,jdbcType=TIMESTAMP},
+    end_time = #{endTime,jdbcType=TIMESTAMP},
+    close_time = #{closeTime,jdbcType=TIMESTAMP},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mall_order
+    where user_id = #{uid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByOrderNo" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mall_order
+    where order_no = #{orderNo,jdbcType=INTEGER}
+  </select>
 </mapper>

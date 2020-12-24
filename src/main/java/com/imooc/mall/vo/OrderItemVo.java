@@ -1,16 +1,16 @@
-package com.imooc.mall.pojo;
+package com.imooc.mall.vo;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author: CyS2020
+ * @date: 2020/12/22
+ */
 @Data
-public class OrderItem {
-
-    private Integer id;
-
-    private Integer userId;
+public class OrderItemVo {
 
     private Long orderNo;
 
@@ -27,6 +27,4 @@ public class OrderItem {
     private BigDecimal totalPrice;
 
     private Date createTime;
-
-    private Date updateTime;
 }
