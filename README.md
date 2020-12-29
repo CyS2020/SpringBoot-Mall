@@ -133,7 +133,7 @@
 
 #### 模块的分割
 - 一般来说商城系统, 支付系统, 包括用于生产dao层和pojo的mybatis系统都是各自独立的
-- 此项目中为了(比较小)就没有将用mybatis生成dao层和pojo的系统独立出来
+- 此项目中为了(比较小)就没有将用mybatis生成dao层和pojo的系统独立出来, 商城系统-支付系统-MyBatis系统
 
 #### 用户模块开发
 - Content-Type:application/json 这是调用API的请求头
