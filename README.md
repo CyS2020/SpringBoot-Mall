@@ -175,3 +175,12 @@ cookie(sessionId)  ->   session(HttpSession)
 - 关于Linux命令, vim命令, docker命令的补充学习; java的http客户端学习
 - 外网无法访问的调试技巧curl http://127.0.0.1:8080/xxx接口xxx
 
+#### centos7环境
+- 配置(首次)静态网址, 每次启动虚拟机linux系统启动systemctl restart network.service主机即可ping通
+- systemctl status firewalld.service查看防火墙状态 systemctl stop firewalld.service关闭防火墙
+- vim .bash_profile 根目录下配置环境变量并source .bash_profile
+- 使用ngnix来启动Nginx服务端程序运行容器类似于Tomcat, 使用java运行jar包
+- systemctl daemon-reload systemctl restart docker.service 启动docker
+- systemctl start  mysqld.service启动mysql systemctl status mysqld.servicec查看mysql状态
+- docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3.8.2-management 启动rabbitmq
+- docker run -d -p 6379:6379 redis:5.0.7 启动redis
