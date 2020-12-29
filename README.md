@@ -172,5 +172,6 @@ cookie(sessionId)  ->   session(HttpSession)
 - 订单中需要将一些会变化的数据存贮起来, 不能用到的时候去数据库里查询不能代表下单时的数据了
 
 #### 基础知识
-- 关于Linux命令, vim命令, docker命令的补充学习
+- 关于Linux命令, vim命令, docker命令的补充学习; java的http客户端学习
 - 外网无法访问的调试技巧curl http://127.0.0.1:8080/xxx接口xxx
+
