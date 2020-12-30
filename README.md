@@ -179,8 +179,9 @@ cookie(sessionId)  ->   session(HttpSession)
 - 配置静态网址, 每次启动虚拟机linux系统启动systemctl restart network.service主机即可ping通
 - systemctl status firewalld.service查看防火墙状态 systemctl stop firewalld.service关闭防火墙
 - vim .bash_profile 根目录下配置环境变量并source .bash_profile
-- 使用ngnix来启动Nginx服务端程序运行容器类似于Tomcat, 使用java运行jar包
+- 配置环境变量后: 使用ngnix来启动Nginx服务端程序运行容器类似于Tomcat, 使用java运行jar包
 - systemctl daemon-reload systemctl restart docker.service 启动docker
+- 安装mysql, 修改访问密码, 重启mysql并开启远程访问的ip地址(主机地址), Navicat连接成功
 - systemctl start  mysqld.service启动mysql systemctl status mysqld.servicec查看mysql状态
 - docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3.8.2-management 启动rabbitmq
 - docker run -d -p 6379:6379 redis:5.0.7 启动redis
