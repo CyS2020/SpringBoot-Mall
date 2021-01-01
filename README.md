@@ -184,7 +184,7 @@ cookie(sessionId)  ->   session(HttpSession)
 - 安装mysql, 修改访问密码, 重启mysql并开启远程访问的ip地址(使用数据库服务器的地址), Navicat连接成功
 - systemctl start  mysqld.service启动mysql systemctl status mysqld.service查看mysql状态
 - docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3.8.2-management 启动rabbitmq
-- docker run -d -p 6379:6379 redis:5.0.7 启动redis
+- docker run -d -p 6379:6379 redis:5.0.7 启动redis 并在管理界面创建相应的队列payNotify
 - 下载运行natapp使用内网穿透访问虚拟机ip地址, 接收微信和支付宝发来的异步通知
 
 #### 反向代理
