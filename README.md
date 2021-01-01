@@ -133,7 +133,7 @@
 
 #### 模块的分割
 - 一般来说商城系统, 支付系统, 包括用于生产dao层和pojo的mybatis系统都是各自独立的
-- 此项目中为了(比较小)就没有将用mybatis生成dao层和pojo的系统独立出来
+- 此项目中为了(比较小)就没有将用mybatis生成dao层和pojo的系统独立出来, 商城系统-支付系统-MyBatis系统
 
 #### 用户模块开发
 - Content-Type:application/json 这是调用API的请求头
@@ -170,3 +170,25 @@ cookie(sessionId)  ->   session(HttpSession)
 #### 订单
 - 不可变：商品图片、收货地址; 可变：状态、价格(波动)
 - 订单中需要将一些会变化的数据存贮起来, 不能用到的时候去数据库里查询不能代表下单时的数据了
+
+#### 基础知识
+- 关于Linux命令, vim命令, docker命令的补充学习; java的http客户端学习
+- 外网无法访问的调试技巧curl http://127.0.0.1:8080/xxx接口xxx
+
+#### centos7环境
+- 配置静态网址, 每次启动虚拟机linux系统启动systemctl restart network.service主机即可ping通
+- 在root目录下: vim .bash_profile 根目录下配置环境变量并source .bash_profile
+- 配置环境变量后: 使用ngnix来启动Nginx服务端程序运行容器类似于Tomcat, 使用java运行jar包
+- systemctl status firewalld.service查看防火墙状态 systemctl stop firewalld.service关闭防火墙
+- systemctl daemon-reload systemctl restart docker.service 启动docker
+- 安装mysql, 修改访问密码, 重启mysql并开启远程访问的ip地址(使用数据库服务器的地址), Navicat连接成功
+- systemctl start  mysqld.service启动mysql systemctl status mysqld.service查看mysql状态
+- docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3.8.2-management 启动rabbitmq
+- docker run -d -p 6379:6379 redis:5.0.7 启动redis 并在管理界面创建相应的队列payNotify
+- 下载运行natapp使用内网穿透访问虚拟机ip地址, 接收微信和支付宝发来的异步通知
+- 运行两个jar包, 即mall项目与pay项目, 一定要先运行natapp再启动pay项目
+
+#### 反向代理
+- http://192.168.1.4/api/products  前端访问的
+- http://192.168.1.4:8080/products 后端提供的
+- 通过修改nginx配置文件来进行反向代理cd /user/local/nginx/conf/ 
