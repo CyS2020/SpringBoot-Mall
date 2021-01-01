@@ -36,11 +36,11 @@ public class OrderController {
     }
 
     @GetMapping("/orders")
-    public ResponseVo<PageInfo> list(@RequestParam Integer pageSize,
-                                     @RequestParam Integer pageNum,
+    public ResponseVo<PageInfo> list(@RequestParam Integer pageNum,
+                                     @RequestParam Integer pageSize,
                                      HttpSession session) {
         User user = (User) session.getAttribute(MallConst.CURRENT_USER);
-        return orderService.list(user.getId(), pageSize, pageNum);
+        return orderService.list(user.getId(), pageNum, pageSize);
     }
 
     @GetMapping("/orders/{orderNo}")

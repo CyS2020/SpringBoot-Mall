@@ -164,7 +164,8 @@ public class OrderServiceImpl implements IOrderService {
                     shippingMap.get(order.getShippingId()));
             orderVoList.add(orderVo);
         }
-        PageInfo pageInfo = new PageInfo(orderVoList);
+        PageInfo pageInfo = new PageInfo<>(orderList);
+        pageInfo.setList(orderVoList);
         return ResponseVo.success(pageInfo);
     }
 

@@ -36,7 +36,6 @@ public class IShippingServiceTest extends MallApplicationTests {
         form.setReceiverAddress("慕课网");
         form.setReceiverCity("北京");
         form.setReceiverMobile("18812345678");
-        form.setReceiverPhone("010123456");
         form.setReceiverProvince("北京");
         form.setReceiverDistrict("海淀区");
         form.setReceiverZip("000000");
