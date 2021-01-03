@@ -186,7 +186,7 @@ cookie(sessionId)  ->   session(HttpSession)
 - docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3.8.2-management 启动rabbitmq
 - docker run -d -p 6379:6379 redis:5.0.7 启动redis 并在管理界面创建相应的队列payNotify
 - 下载运行natapp使用内网穿透访问虚拟机ip地址, 接收微信和支付宝发来的异步通知
-- 运行两个jar包, 即mall项目与pay项目, 一定要先运行natapp再启动pay项目
+- 运行两个jar包, 即mall项目与pay项目, 一定要先运行natapp再启动pay项目, 保证natapp在Online状态
 
 #### 反向代理
 - http://192.168.1.4/api/products  前端访问的
