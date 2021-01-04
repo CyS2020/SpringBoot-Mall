@@ -195,6 +195,40 @@ cookie(sessionId)  ->   session(HttpSession)
 - 通过修改nginx配置文件来进行反向代理cd /user/local/nginx/conf/ 
 
 ### Spring常用注解
-#### 依赖 `spring-boot-starter-test`
-- `@RunWith(SpringRunner.class)` 注解是一个测试启动器，可以加载Springboot测试注解。
-- `@SpringBootTest` 通过@RunWith 和 @SpringBootTest启动spring容器。
+#### `spring-boot-starter-test`
+- `@RunWith(SpringRunner.class)` : 注解是一个测试启动器，可以加载Springboot测试注解。
+- `@SpringBootTest` : 通过@RunWith 和 @SpringBootTest启动spring容器。
+
+#### `spring-boot-starter-web`
+- `@Component` : 调用无参构造器创建一个bean对象, 并把对象存入spring的IOC容器, 交由spring容器进行管理
+- `@Controller` : 作用@Component相同, 一般用于表现层注解
+- `@Service` : 作用@Component相同, 一般用于业务层注解
+- `@Repository` : 作用@Component相同, 一般用于持久层注解
+- `@Bean` : 用于把当前方法的返回值作为bean对象存入spring的IOC容器中, 一般是需要初始化数据的类
+- `@Configuration` : 搭配@Bean使用在方法中设置必要信息, 一般用于配置类
+- `@Autowired` : 是spring动态装配bean的注解, 默认按照类型进行装配(byType)
+- `@ConfigurationProperties(prefix = "xxx")` : 参数配置在application.properties或application.yml文件中, 搭配@Component使用
+- `@SpringBootApplication` : 目的是开启自动配置 = @Configuration + @EnableAutoConfiguration + @ComponentScan。
+
+- `@PostMapping` : 
+- `@DeleteMapping` : 
+- `@PutMapping` : 
+- `@GetMapping` : 
+- `@RequestBody` : 
+- `@RequestMapping` : 
+- `@RequestParam` : 
+- `@ResponseBody` : 
+- `@PathVariable` : 
+- `@RestController` : 
+- `@Valid` : 
+- `@NotNull` : 
+- `@NotBlank` : 
+- `@NotEmpty` : 
+
+
+
+
+#### `mybatis-spring-boot-starter`
+- `@Mapper` : 添加了@Mapper注解之后这个接口在编译时会生成相应的实现类, 需要注意的是:这个接口中不可以定义同名的方法，因为会生成相同的id也就是说这个接口是不支持重载的
+- `@Select("select * from mall_category where id = #{id}")` : 对于多个参数来说, 每个参数之前都要加上@Param注解, 要不然会找不到对应的参数进而报错
+- `@MapperScan(basePackages = "xxx")` : 想要每个接口都要变成实现类, 那么需要在每个接口类上加上@Mapper注解比较麻烦解决这个问题用@MapperScan, 是在Springboot启动类上面添加
