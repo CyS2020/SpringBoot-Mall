@@ -14,6 +14,7 @@
 - java -jar mall-0.0.1-SNAPSHOT.jar 命令运行主程序
 
 #### 使用社区版IDEA创建SpringBoot项目
+- 创建maven项目
 - 继承springBoot项目版本自己确定
 ```
 <parent>
