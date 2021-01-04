@@ -193,3 +193,8 @@ cookie(sessionId)  ->   session(HttpSession)
 - http://192.168.1.4/api/products  前端访问的
 - http://192.168.1.4:8080/products 后端提供的
 - 通过修改nginx配置文件来进行反向代理cd /user/local/nginx/conf/ 
+
+### Spring常用注解
+#### 依赖 `spring-boot-starter-test`
+- `@RunWith(SpringRunner.class)` 注解是一个测试启动器，可以加载Springboot测试注解。
+- `@SpringBootTest` 通过@RunWith 和 @SpringBootTest启动spring容器。
