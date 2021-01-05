@@ -221,7 +221,7 @@ cookie(sessionId)  ->   session(HttpSession)
 - `@ResponseBody` : 
 
 - `@RestController` : 
-- `@Valid` : 对象属性字段的规则检测, 对象属性需要进行验证; 在定义对象的字段上使用@NotNull、@NotBlank、@NotEmpty; 常用作入参检验
+- `@Valid` : 对象属性字段的规则检测, 对象属性需要进行验证; 在定义对象的字段上使用@NotNull、@NotBlank、@NotEmpty常用作入参检验
 
 
 
