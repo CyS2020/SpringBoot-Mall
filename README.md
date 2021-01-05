@@ -259,6 +259,7 @@ cookie(sessionId)  ->   session(HttpSession)
 - `make install` 安装
 - `./` 表示执行当前目录下的某个文件
 - `ps -ef | grep java` 显示当前java进程
+- `kill -9 xxid` 杀死进程
 - `systemctl daemon-reload` 重新加载某个服务的配置文件
 - `systemctl start *d.service` 启动服务
 - `systemctl stop *d.service` 停止服务
