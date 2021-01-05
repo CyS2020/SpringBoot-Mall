@@ -226,3 +226,42 @@ cookie(sessionId)  ->   session(HttpSession)
 - `@Mapper` : 添加了@Mapper注解之后这个接口在编译时会生成相应的实现类, 需要注意的是:这个接口中不可以定义同名的方法，因为会生成相同的id也就是说这个接口是不支持重载的
 - `@Select("select * from mall_category where id = #{id}")` : 对于多个参数来说, 每个参数之前都要加上@Param注解, 要不然会找不到对应的参数进而报错
 - `@MapperScan(basePackages = "xxx")` : 想要每个接口都要变成实现类, 那么需要在每个接口类上加上@Mapper注解比较麻烦解决这个问题用@MapperScan, 是在Springboot启动类上面添加
+
+### linux命令
+#### 文件和目录
+- `cd` 进入个人的主目录
+- `cd /home` 进入 '/ home' 目录; 
+- `cd ..` 返回上一级目录
+- `pwd` 显示工作路径
+- `ls` 查看目录中的文件
+- `ls -l` 显示文件和目录的详细资料 
+- `mkdir dir1` 创建一个叫做 'dir1' 的目录' 
+- `mkdir -p /tmp/dir1/dir2` 创建一个目录树 
+- `rm -rf dir1` 删除一个叫做 'dir1' 的目录并同时删除其内容 
+- `mv dir1 new_dir` 重命名/移动 一个目录到新目录里
+- `cp file1 file2` 复制一个文件 
+- `chmod +x a.txt` 给所有用户给予a.txt文件可执行权限
+- `scp local_file remote_username@remote_ip:remote_folder` 从本地复制到远程
+
+#### 其他命令
+- `su root` 切换为root身份需要输入密码
+- ·`vim .bash_profile` 根目录下配置环境变量用cd直接进入根目录
+- `source .bash_profile` 使环境变量生效
+- `yum list` 列出所有可安裝的软件清单命令
+- `yum install <package_name>` 仅安装指定的软件命令
+- `yum update <package_name>`仅更新指定的软件命令
+- `yum remove <package_name>` 删除软件包命令
+- `wget  https:// xxx .tar.gz .zip` 下载安装包
+- `tar -xzvf test.tar.gz` 解压文件
+- `unzip test.zip` 解压文件需要安装zip程序
+- `./configure --prefix=/usr/local/test` 配置
+- `make` 编译
+- `make install` 安装
+- `./` 表示执行当前目录下的某个文件
+- `ps -ef | grep java` 显示当前java进程
+- `systemctl daemon-reload` 重新加载某个服务的配置文件
+- `systemctl start *d.service` 启动服务
+- `systemctl stop *d.service` 停止服务
+- `systemctl restart *d.service` 重启服务
+- `systemctl reload *d.service` 重新加载服务配置文件
+- `systemctl status *d.service` 查询服务运行状态
