@@ -210,21 +210,18 @@ cookie(sessionId)  ->   session(HttpSession)
 - `@ConfigurationProperties(prefix = "xxx")` : 参数配置在application.properties或application.yml文件中, 搭配@Component使用
 - `@SpringBootApplication` : 目的是开启自动配置 = @Configuration + @EnableAutoConfiguration + @ComponentScan。
 
-- `@PostMapping` : 
-- `@DeleteMapping` : 
-- `@PutMapping` : 
-- `@GetMapping` : 
-- `@RequestBody` : 
-- `@RequestMapping` : 
-- `@RequestParam` : 
+- `@RequestMapping` : 映射HTTP请求，也就是通过它来指定控制器可以处理哪些URL请求, 主要有path、method、params属性
+- `@PostMapping` : 注解将HTTP的POST请求映射到特定的处理程序方法, 等于@RequestMapping(method = RequestMethod.POST)
+- `@DeleteMapping` : 注解将HTTP的DELETE请求映射到特定的处理程序方法, 等于@RequestMapping(method = RequestMethod.DELETE)
+- `@PutMapping` : 注解将HTTP的PUT请求映射到特定的处理程序方法, 等于@RequestMapping(method = RequestMethod.PUT)
+- `@GetMapping` : 注解将HTTP的GET请求映射到特定的处理程序方法, 等于@RequestMapping(method = RequestMethod.GET)
+- `@PathVariable` : 将 URL 中的占位符绑定到控制器的处理方法的参数中，占位符使用{}括起来
+- `@RequestBody` : 用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的), 前端使用POST方式进行提交, spring组装json为对象
+- `@RequestParam` : 用来处理body使用x-www-form-urlencoded来请求, url中的?后面参数可以用@RequestParam来接收
 - `@ResponseBody` : 
-- `@PathVariable` : 
-- `@RestController` : 
-- `@Valid` : 
-- `@NotNull` : 
-- `@NotBlank` : 
-- `@NotEmpty` : 
 
+- `@RestController` : 
+- `@Valid` : 对象属性字段的规则检测, 对象属性需要进行验证; 在定义对象的字段上使用@NotNull、@NotBlank、@NotEmpty; 常用作入参检验
 
 
 
