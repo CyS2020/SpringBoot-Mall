@@ -218,12 +218,9 @@ cookie(sessionId)  ->   session(HttpSession)
 - `@PathVariable` : 将 URL 中的占位符绑定到控制器的处理方法的参数中，占位符使用{}括起来
 - `@RequestBody` : 用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的), 前端使用POST方式进行提交, spring组装json为对象
 - `@RequestParam` : 用来处理body使用x-www-form-urlencoded来请求, url中的?后面参数可以用@RequestParam来接收
-- `@ResponseBody` : 
-
-- `@RestController` : 
+- `@ResponseBody` : 将java对象转为json格式的数据, 将controller的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到response对象的body区
 - `@Valid` : 对象属性字段的规则检测, 对象属性需要进行验证; 在定义对象的字段上使用@NotNull、@NotBlank、@NotEmpty常用作入参检验
-
-
+- `@RestController` : 相当于@ResponseBody ＋ @Controller, @Controller注解会返回一个ModelAndView; 如果需要返回到指定页面, 则需要用 @Controller配合视图解析器InternalResourceViewResolver才行; 如果需要返回JSON，XML或自定义mediaType内容到页面，则需要在对应的方法上加上@ResponseBody注解。
 
 #### `mybatis-spring-boot-starter`
 - `@Mapper` : 添加了@Mapper注解之后这个接口在编译时会生成相应的实现类, 需要注意的是:这个接口中不可以定义同名的方法，因为会生成相同的id也就是说这个接口是不支持重载的
