@@ -1,4 +1,4 @@
-### 知识点
+### 项目总结
 #### 事务
 - @Transactional 注解底层是由数据库来决定的, 常用的引擎有InnoDB和MyISAM(不支持事务)
 - 事务一定是数据库的事务, 而不是java代码的事务, 出现RuntimeException的时候回滚
