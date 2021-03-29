@@ -80,7 +80,7 @@
 - po: persistent object 持久层对象
 - pojo: plain ordinary java object 普通java对象只有属性+get/set方法
 
-#### Modle层(模型层)
+#### Model层(模型层)
 - dao层：dao层叫数据访问层, 全称为data access object, 属于一种比较底层, 比较基础的操作, 具体到对于某个表、某个实体的增删改查, 取出数据封装后返回给service层
 - service层：service层叫服务层, 被称为服务, 肯定是相比之下比较高的层, 比如取得连接、关闭数据库连接、事务回滚, 一些复杂的逻辑业务, 相当于将几种操作封装起来
 
