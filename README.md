@@ -269,3 +269,9 @@ cookie(sessionId)  ->   session(HttpSession)
 - `systemctl restart *d.service` 重启服务
 - `systemctl reload *d.service` 重新加载服务配置文件
 - `systemctl status *d.service` 查询服务运行状态
+
+### spring框架思考
+- 依赖注入是服务与服务(组件)之间的关系，如果你本身不是服务或者组件，内部注入不注入的没什么用
+- 常用注入方式: 构造器注入，属性注入，方法参数注入
+- 配置方式: xml方式(过时)，注解配置，java配置。涉及全局配置用java配置，涉及业务配置用注解配置
+
