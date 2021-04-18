@@ -275,3 +275,11 @@ cookie(sessionId)  ->   session(HttpSession)
 - 常用注入方式: 构造器注入，属性注入，方法参数注入
 - 配置方式: xml配置，注解配置，java配置。涉及基本(数据库)配置用xml，涉及业务配置用注解，涉及第三方jar包中的类用java配置
 
+### 关于serlvet的思考
+1. 任何web应用程序，必然包括 接收请求、处理请求、响应请求，然而接收与响应是共性的，且没有差异。
+2. 响应与接收抽取成web服务器，而处理逻辑是不同的抽取成servlet，定义了一套接口，遵循这个接口就能处理请求
+3. 使用java代码实现servlet的处理逻辑就是后端开发了，开发后的程序需要运行在servlet容器上例如tomcat
+4. web服务器处理http请求时，负责处理静态请求，遇到动态请求交给servlet容器，servlet容器根据url找到对应的servlet应用程序(映射器)，spring框架核心组件DispatcherServlet
+5. tomcat等servlet容器，将请求的http报文转为HttpServletRequest、HttpServletResponse(空)对象，处理后数据填入会填入HttpServletResponse返回
+6. 后端的入参来自HttpServletRequest我们在控制器中参数列表内容来自这里，然而我们基本不会用到这个类，框架会帮我们解析参数列表，这就涉及到Controller参数绑定，前后端对象的定义
+7. servlet容器会为每一个servlet请求创建一个新的java线程，spring能在多线程的环境下将各个线程隔离，用的就是ThreadLocal
