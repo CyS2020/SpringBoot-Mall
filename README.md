@@ -286,3 +286,16 @@ cookie(sessionId)  ->   session(HttpSession)
 5. tomcat等servlet容器，将请求的http报文转为HttpServletRequest、HttpServletResponse(空)对象，处理后数据填入会填入HttpServletResponse返回
 6. 后端的入参来自HttpServletRequest我们在控制器中参数列表内容来自这里，然而我们基本不会用到这个类，框架会帮我们解析参数列表，这就涉及到Controller参数绑定，前后端对象的定义
 7. servlet容器会为每一个servlet请求创建一个新的java线程，spring能在多线程的环境下将各个线程隔离，用的就是ThreadLocal
+
+#### Spring与SpringBoot区别
+- 创建独立的 Spring应用。
+- 嵌入式 Tomcat、 Jetty、 Undertow容器（无需部署war文件）。
+- 提供的 starters 简化构建配置 
+- 尽可能自动配置 spring应用。
+- 提供生产指标,例如指标、健壮检查和外部化配置
+- 完全没有代码生成和 XML配置要求
+
+#### SpringBoot Starter工作原理
+- Spring Boot 在启动时扫描项目所依赖的JAR包，寻找包含spring.factories文件的JAR
+- 根据spring.factories配置加载AutoConfigure类
+- 根据 @Conditional注解的条件，进行自动配置并将Bean注入Spring Context
