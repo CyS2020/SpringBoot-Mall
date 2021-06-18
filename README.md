@@ -12,7 +12,7 @@
 
 #### 运行jar包
 - java -jar mall-0.0.1-SNAPSHOT.jar 命令运行主程序
-- java -cp [jar包的路径] [com.google.xxx.class]
+- java -cp [jar包的路径] [类路径]
 
 #### 使用社区版IDEA创建SpringBoot项目
 - 创建maven项目
