@@ -302,9 +302,9 @@ cookie(sessionId)  ->   session(HttpSession)
 - 根据 @Conditional注解的条件，进行自动配置并将Bean注入Spring Context
 
 #### Spring事务什么时候会失效
-1、发生自调用，类里面使用this调用本类的方法(this通常省略)，此时这个this不是代理对象，而是UserService类本身，所以失效。
+- 发生自调用，类里面使用this调用本类的方法(this通常省略)，此时这个this不是代理对象，而是UserService类本身，所以失效。
 解决办法很简单，让this变成UserService的代理类即可。（即从spring的IOC容器中取出对象）
-2、方法不是public的，@Transactional只能用于public的方法上，否则事务会失效，如果要用在非public上，可以开启AspectJ代理模式
-3、数据库不支持事务 （Mysql的Myisam引擎）
-4、没有被spring管理
-5、异常被吃掉，事务不会回滚。
+- 方法不是public的，@Transactional只能用于public的方法上，否则事务会失效，如果要用在非public上，可以开启AspectJ代理模式
+- 数据库不支持事务 （Mysql的Myisam引擎）
+- 没有被spring管理
+- 异常被吃掉，事务不会回滚。
